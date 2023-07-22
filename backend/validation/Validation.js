@@ -1,7 +1,6 @@
 const jsonwebtoken=require("jsonwebtoken")
 const dotenv=require("dotenv")
 dotenv.config()
-
 module.exports = (req, resp, next)=>{
     // console.log(req.headers);
     if (!req.headers.authorization) {
@@ -17,6 +16,7 @@ module.exports = (req, resp, next)=>{
             })
         }
         req.userid= payload.id
+        
         //payload = id and mail from validation
         next()
     })

@@ -46,7 +46,7 @@ router.post('/signin/admin',async (req,res)=>{
             error:"invalid username or password"
         })
     }
-    const token = jsonwebtoken.sign({email:data.email},process.env.SECRET_KEY)
+    const token = jsonwebtoken.sign({id:data._id,email:data.email},process.env.SECRET_KEY)
     res.status(200).json({token})
 })
 
