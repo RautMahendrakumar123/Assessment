@@ -21,6 +21,7 @@ mongoose.connect(process.env.MONGO_DB)
 })
 
 app.use(require("./routes/user.routes"))
+app.use(require('./routes/admin.routes'))
 
 app.listen(process.env.PORT,()=>{
     console.log(`server running on port ${process.env.PORT}`)
