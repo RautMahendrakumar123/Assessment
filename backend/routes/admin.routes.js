@@ -17,20 +17,20 @@ const router = express.Router()
  *       properties:
  *         username:
  *           type: string
- *           description: Username of the new user
+ *           description: Username of the new admin
  *         email:
  *           type: string
- *           description: Email of the new user
+ *           description: Email of the new admin
  *         password:
  *           type: string
- *           description: Password of the new user
+ *           description: Password of the new admin
  * 
  * /signup/admin:
  *   post:
  *     tags:
  *       - Admin
  *     summary: Register a new admin
- *     description: Create a new user with the provided username, email, and password.
+ *     description: Create a new admin with the provided username, email, and password.
  *     requestBody:
  *       required: true
  *       content:
@@ -39,7 +39,7 @@ const router = express.Router()
  *             $ref: '#/components/schemas/NewUser'
  *     responses:
  *       201:
- *         description: User registered successfully
+ *         description: Admin registered successfully
  *         content:
  *           application/json:
  *             schema:
@@ -97,10 +97,10 @@ router.post('/signup/admin',async (req,res)=>{
  *       properties:
  *         email:
  *           type: string
- *           description: Email of the user trying to sign in
+ *           description: Email of the admin trying to sign in
  *         password:
  *           type: string
- *           description: Password of the user trying to sign in
+ *           description: Password of the admin trying to sign in
  * 
  * /signin/admin:
  *   post:
